@@ -23,11 +23,11 @@ def marvel_rivals_rank():
         data = response.json()
         try:
             rank = data['data']['segments'][0]['stats']['rank']['displayValue']
-            return f'{user_id}\'s Marvel Rivals Rank: {rank}'
+            return rank  # Only return the rank, no UID
         except KeyError:
-            return f'Error: Could not retrieve rank for {user_id}.'
+            return 'Error: Could not retrieve rank.'
     else:
-        return f'Error: Unable to fetch data for {user_id}.'
+        return 'Error: Unable to fetch data for the specified user.'
 
 if __name__ == '__main__':
     app.run(debug=True)
