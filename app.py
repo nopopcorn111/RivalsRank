@@ -29,5 +29,6 @@ def marvel_rivals_rank():
     else:
         return 'Error: Unable to fetch data for the specified user.'
 
+# Ensure the app runs properly on Koyeb
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000)  # Use port 8000
